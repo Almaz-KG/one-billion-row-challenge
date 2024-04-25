@@ -1,4 +1,6 @@
-use common::Record;
+mod common;
+
+use crate::common::Record;
 use std::env;
 use std::collections::HashMap;
 use std::io::Read;

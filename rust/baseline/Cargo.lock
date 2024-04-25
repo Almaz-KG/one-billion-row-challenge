@@ -5,14 +5,3 @@ version = 3
 [[package]]
 name = "baseline"
 version = "0.1.0"
-dependencies = [
- "common",
-]
-
-[[package]]
-name = "common"
-version = "0.1.0"
-
-[[package]]
-name = "one-billion-row-challenge"
-version = "0.1.0"
