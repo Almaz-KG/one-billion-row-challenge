@@ -27,8 +27,17 @@ Istanbul;23.0
 ```
 
 Output line:
-```json
+```
 {Abha=-23.0/18.0/59.2, Abidjan=-16.2/26.0/67.3, Abéché=-10.0/29.4/69.0, ...}
 ```
 
+## How to test your implementation
 
+1. Generate test data (1 billion rows)
+> python3 create_measurements.py 1_000_000_000
+It will take about ~2 minutes to complete and produce a ~15Gb size file in data/ folder  (of course depending on your machine)
+
+2. Implement your code in any prefered language/framework
+
+3. Measure the performance of your implementation
+> TODO
