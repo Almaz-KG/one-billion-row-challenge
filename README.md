@@ -34,10 +34,11 @@ Output line:
 ## How to test your implementation
 
 1. Generate test data (1 billion rows)
-> python3 create_measurements.py 1_000_000_000
-It will take about ~2 minutes to complete and produce a ~15Gb size file in data/ folder  (of course depending on your machine)
+> $> python3 create_measurements.py 1_000_000_000
+
+It will take about ~2 minutes to complete and produce a ~15Gb size file in data/ folder (of course depending on your machine)
 
 2. Implement your code in any prefered language/framework
 
 3. Measure the performance of your implementation
-> TODO
+> time $your_programm_command data/measurements.txt
