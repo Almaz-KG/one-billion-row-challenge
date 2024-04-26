@@ -1,0 +1,11 @@
+[package]
+name = "memchr_simd"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+fxhash = "0.2.1"
+memchr = "2.7.2"
+
+[profile.release]
+debug = true
