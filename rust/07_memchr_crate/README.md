@@ -8,5 +8,4 @@
       121.53 real        55.07 user        36.83 sys
       124.08 real        56.75 user        38.23 sys
       125.08 real        56.56 user        38.65 sys
-
 ```
