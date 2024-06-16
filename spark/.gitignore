@@ -1,0 +1,8 @@
+tmp/
+data/
+.cache/
+.jupyter/
+.local/
+.npm/
+.ipython/
+.ipynb_checkpoints/

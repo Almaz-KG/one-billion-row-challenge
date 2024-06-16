@@ -1,0 +1,77 @@
+# version: '3.7'
+
+x-spark-common:
+  &spark-common
+  image: bitnami/spark:3.5.0
+  volumes:
+    - ./data/:/data/
+  networks:
+    - xebia-network
+  environment:
+    - SPARK_RPC_AUTHENTICATION_ENABLED=no
+    - SPARK_RPC_ENCRYPTION_ENABLED=no
+    - SPARK_LOCAL_STORAGE_ENCRYPTION_ENABLED=no
+    - SPARK_SSL_ENABLED=no
+
+x-spark-worker:
+  &spark-worker
+  <<: *spark-common
+  environment:
+    - SPARK_MODE=worker
+    - SPARK_MASTER_URL=spark://spark-master:7077
+    - SPARK_WORKER_MEMORY=2G
+    - SPARK_WORKER_CORES=2
+  depends_on:
+    - spark-master
+
+
+services:
+  spark-master:
+    <<: *spark-common
+    environment:
+      - SPARK_MODE=master
+    ports:
+      - "7078:8080"
+      - "8081:8081"
+      - "7077:7077"
+    volumes:
+      - ./data/:/data/
+
+  spark-worker-1:
+    <<: *spark-worker
+    ports:
+      - 8082:8081
+  spark-worker-2:
+    <<: *spark-worker
+    ports:
+      - 8083:8081
+  spark-worker-3:
+    <<: *spark-worker
+    ports:
+      - 8084:8081
+  spark-worker-4:
+    <<: *spark-worker
+    ports:
+      - 8085:8081
+
+  jupyter:
+    image: jupyter/pyspark-notebook:spark-3.5.0
+    ports:
+      - 8888:8888
+      - 4040:4040 
+      - 4041:4041
+    volumes:
+      - ./jupyter:/home/jovyan
+      - ./spark/jars:/jars
+      - ./data:/data
+    networks:
+      - xebia-network
+
+networks:
+  xebia-network:
+    driver: bridge
+
+volumes:
+  postgres_data:
+
+  
