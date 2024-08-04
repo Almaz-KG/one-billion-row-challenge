@@ -3,12 +3,15 @@
 > seq 5 | xargs -Iz time -a -o time.log cargo run -r -- ../../data/measurements.txt
 
 ```time.log
-      317.72 real       183.08 user        63.69 sys
-      314.67 real       184.55 user        63.78 sys
-      311.29 real       181.88 user        65.25 sys
-      302.04 real       182.33 user        60.73 sys
-      307.38 real       180.75 user        64.29 sys
+       65.28 real        58.77 user         4.36 sys
+       69.41 real        59.99 user         6.14 sys
+       67.49 real        59.97 user         5.09 sys
+       64.35 real        59.38 user         3.80 sys
+       64.06 real        59.50 user         3.55 sys
 ```
+
+### Flamegraph
+> sudo cargo flamegraph -r -- ../../data/measurements.txt     
 
 ### Details
 Read the content of the file into a single string variable, split it up into lines by (\n) symbol, and iterate over the line adding each line content into hashmap 

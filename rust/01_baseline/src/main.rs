@@ -27,5 +27,4 @@ fn main() {
     } else {
         println!("No file specified");
     }
-    
 }
