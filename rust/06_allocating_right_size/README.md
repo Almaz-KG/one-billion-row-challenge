@@ -3,10 +3,12 @@
 > seq 5 | xargs -Iz time -a -o time.log cargo run -r -- ../../data/measurements.txt
 
 ```time.log
-      147.96 real        80.80 user        35.55 sys
-      141.23 real        78.37 user        34.11 sys
-      143.93 real        79.23 user        34.39 sys
-      141.49 real        78.79 user        33.88 sys
-      137.59 real        78.05 user        30.81 sys
-
+       31.34 real        24.95 user         4.68 sys
+       29.54 real        24.90 user         3.50 sys
+       29.34 real        24.96 user         3.43 sys
+       29.86 real        25.33 user         3.63 sys
+       30.16 real        25.68 user         3.44 sys
 ```
+
+### Flamegraph
+> sudo cargo flamegraph -r -- ../../data/measurements.txt
