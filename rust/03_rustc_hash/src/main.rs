@@ -7,6 +7,7 @@ use fxhash::FxHashMap;
 pub struct Record {
     pub min: f32,
     pub max: f32,
+    
     pub sum: f32,
     pub count: u64,
 }
