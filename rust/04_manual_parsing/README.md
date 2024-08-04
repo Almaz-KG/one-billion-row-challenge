@@ -5,9 +5,13 @@ Currently about 13% of processing time CPU makes bytes to float parsing. Because
 > seq 5 | xargs -Iz time -a -o time.log cargo run -r -- ../../data/measurements.txt
 
 ```time.log
-      152.90 real        82.83 user        37.71 sys
-      152.27 real        86.88 user        36.13 sys
-      149.75 real        86.37 user        33.57 sys
-      149.19 real        87.12 user        33.81 sys
-      145.95 real        85.16 user        32.50 sys
+       31.17 real        24.67 user         4.57 sys
+       29.53 real        24.87 user         3.54 sys
+       29.57 real        24.83 user         3.56 sys
+       30.48 real        24.71 user         3.61 sys
+       29.40 real        24.96 user         3.53 sys
+
 ```
+
+### Flamegraph
+> sudo cargo flamegraph -r -- ../../data/measurements.txt     

@@ -18,7 +18,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "rustc_hash"
+name = "manual_parsing"
 version = "0.1.0"
 dependencies = [
  "fxhash",
